@@ -1,0 +1,44 @@
+name: Update lottery data
+
+# 云端定时拉取 Lotterywest 官方结果 → 追加新期 → 重建 app/data.js，
+# 有变化就自动提交并推送，触发 Vercel 重新部署。
+on:
+  schedule:
+    # 周三、周五 02:00 UTC（约澳洲东部 12:00–13:00，周二/周四开奖结果公布之后）
+    - cron: '0 2 * * 3,5'
+  workflow_dispatch: {}   # 也可在 Actions 页面手动触发
+
+permissions:
+  contents: write          # 允许用 GITHUB_TOKEN 推回仓库
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Fetch latest results & rebuild data.js
+        run: python update_data.py
+
+      - name: Commit & push if data changed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: auto-update lottery data [skip ci]"
+            git push
+            echo "Pushed updated data."
+          else
+            echo "No new draws — nothing to update."
+          fi
