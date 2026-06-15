@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Oz Lotto &amp; Powerball Simulator · Predict / Generate / Validate</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div>
+    <h1 data-i18n="app.title">🎲 Lotto Simulator</h1>
+    <div class="sub" data-i18n="app.subtitle">Statistical prediction · generation · validation from past draws (no random())</div>
+  </div>
+  <div class="gamepick">
+    <button class="gamebtn oz active" data-game="ozlotto">Oz Lotto</button>
+    <button class="gamebtn pb" data-game="powerball">Powerball</button>
+  </div>
+  <div class="langpick" id="langpick"></div>
+</header>
+
+<div class="tabs">
+  <div class="tab active" data-view="overview" data-i18n="tab.overview">Overview</div>
+  <div class="tab" data-view="predict" data-i18n="tab.predict">Predict</div>
+  <div class="tab" data-view="generate" data-i18n="tab.generate">Generate</div>
+  <div class="tab" data-view="validate" data-i18n="tab.validate">Validate</div>
+</div>
+
+<main>
+  <div class="disclaimer" data-i18n-html="disclaimer">
+    ⚠️ Every draw is an independent random event — past results <strong>cannot</strong> truly predict the future. This tool applies various mathematical/statistical methods for experimentation and fun. Please view it rationally and never use it for betting decisions.
+  </div>
+
+  <!-- ================= OVERVIEW ================= -->
+  <section class="view active" id="view-overview">
+    <div class="card">
+      <h3 id="ov-title">Overview</h3>
+      <p class="hint" id="ov-meta"></p>
+      <div class="controls">
+        <div>
+          <label data-i18n="window.label">Stats window (last N draws)</label>
+          <select id="ov-window"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card grow">
+        <h3 data-i18n="ov.hot.title">🔥 Hot Top 10 (most frequent in window)</h3>
+        <p class="hint" data-i18n="ov.hot.hint">Main numbers drawn most often.</p>
+        <div id="ov-hot"></div>
+      </div>
+      <div class="card grow">
+        <h3 data-i18n="ov.cold.title">❄️ Cold Top 10 (longest absent)</h3>
+        <p class="hint" data-i18n="ov.cold.hint">Numbers with the longest gap since last drawn.</p>
+        <div id="ov-cold"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="ov.freq.title">📊 Frequency of all numbers</h3>
+      <p class="hint" data-i18n="ov.freq.hint">Times each main number appeared in the window (red = hotter, blue = colder).</p>
+      <div class="freqgrid" id="ov-freqgrid"></div>
+      <div class="legend"><span style="color:var(--hot)" data-i18n="legend.hot">Hot</span><span style="color:var(--cold)" data-i18n="legend.cold">Cold</span></div>
+    </div>
+
+    <div class="row">
+      <div class="card grow">
+        <h3 data-i18n="ov.shape.title">🧩 Shape distribution</h3>
+        <p class="hint" data-i18n="ov.shape.hint">Structural features of past combinations, used by "balanced" generation.</p>
+        <div id="ov-shape"></div>
+      </div>
+      <div class="card grow">
+        <h3 data-i18n="ov.pairs.title">🔗 Top 10 pairs</h3>
+        <p class="hint" data-i18n="ov.pairs.hint">Number pairs that appear together most (co-occurrence).</p>
+        <div id="ov-pairs"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="ov.recent.title">🕑 Recent draws</h3>
+      <div id="ov-recent"></div>
+    </div>
+  </section>
+
+  <!-- ================= PREDICT ================= -->
+  <section class="view" id="view-predict">
+    <div class="card">
+      <h3 data-i18n="pr.title">Predict next draw · multiple math methods</h3>
+      <p class="hint" data-i18n="pr.hint">Each method scores every number and takes the highest few as a "predicted set". "Consensus" at the bottom fuses the rankings of multiple methods.</p>
+      <div class="controls">
+        <div>
+          <label data-i18n="window.label">Stats window (last N draws)</label>
+          <select id="pr-window"></select>
+        </div>
+        <div>
+          <label data-i18n="pr.decay.label">Recency decay λ (higher = favor recent)</label>
+          <select id="pr-decay">
+            <option value="0" data-i18n="decay.0">0 · none (equal)</option>
+            <option value="0.01" data-i18n="decay.light">0.01 · light</option>
+            <option value="0.03" selected data-i18n="decay.medium">0.03 · medium</option>
+            <option value="0.06" data-i18n="decay.heavy">0.06 · heavy</option>
+          </select>
+        </div>
+        <div style="flex:0 0 auto"><button class="act" id="pr-run" data-i18n="pr.run">Recompute</button></div>
+      </div>
+    </div>
+    <div id="pr-results"></div>
+
+    <div class="card">
+      <h3 data-i18n="bt.title">🧪 Backtest: do these methods actually beat random? (walk-forward)</h3>
+      <p class="hint" data-i18n="bt.hint">Predict each draw using only the data before it, roll forward to the end, and compare the real average hits against the random baseline — the only honest test of predictive power.</p>
+      <div class="controls">
+        <div>
+          <label data-i18n="bt.mode.label">Training mode</label>
+          <select id="pr-bt-mode">
+            <option value="expanding" selected data-i18n="bt.mode.expanding">Expanding window (all history, growing)</option>
+            <option value="fixed" data-i18n="bt.mode.fixed">Fixed window (last N draws only, N = window above)</option>
+          </select>
+        </div>
+        <div>
+          <label data-i18n="bt.sims.label">Monte Carlo sims (random draws for the empirical p-value)</label>
+          <select id="pr-bt-sims">
+            <option value="1000" data-i18n="bt.sims.fast">1000 · fast</option>
+            <option value="3000" selected data-i18n="bt.sims.default">3000 · default</option>
+            <option value="10000" data-i18n="bt.sims.fine">10000 · fine</option>
+            <option value="50000" data-i18n="bt.sims.veryfine">50000 · very fine (slow)</option>
+          </select>
+        </div>
+        <div style="flex:0 0 auto"><button class="act" id="pr-bt-run" data-i18n="bt.run">Run backtest</button></div>
+      </div>
+      <div id="pr-backtest" style="margin-top:6px"><p class="muted" data-i18n="bt.placeholder">Click "Run backtest".</p></div>
+    </div>
+  </section>
+
+  <!-- ================= GENERATE ================= -->
+  <section class="view" id="view-generate">
+    <div class="card">
+      <h3 data-i18n="gen.title">Generate possible combinations · data-driven weighted sampling</h3>
+      <p class="hint" data-i18n-html="gen.hint">
+        No <code>Math.random()</code>. Numbers are weighted by the statistical model, then drawn by <strong>reproducible seeded sampling</strong> (deterministic PRNG) — the same seed + parameters always give the same result.
+      </p>
+      <div class="modepick">
+        <button class="modebtn active" data-mode="recommend" data-i18n="gen.mode.recommend">🔰 Recommended</button>
+        <button class="modebtn" data-mode="custom" data-i18n="gen.mode.custom">⚙️ Custom</button>
+        <span class="note" id="gen-mode-hint"></span>
+      </div>
+      <div class="controls">
+        <div>
+          <label><span data-i18n="gen.method.label">Method</span> <span class="tip" id="gen-method-tip" data-tip="">i</span></label>
+          <select id="gen-method">
+            <option value="frequency" data-i18n="gen.opt.frequency">Weighted frequency (hot bias)</option>
+            <option value="overdue" data-i18n="gen.opt.overdue">Overdue (cold bias)</option>
+            <option value="markov" data-i18n="gen.opt.markov">Markov (follow last draw)</option>
+            <option value="bayes" data-i18n="gen.opt.bayes">Bayesian shrinkage (anti-overfit)</option>
+            <option value="consensus" selected data-i18n="gen.opt.consensus">Consensus (fused methods)</option>
+            <option value="balanced" data-i18n="gen.opt.balanced">Balanced shape (fits history)</option>
+            <option value="topk" data-i18n="gen.opt.topk">Deterministic Top-K (no randomness)</option>
+            <option value="random" data-i18n="gen.opt.random">🎲 Pure random (uniform baseline)</option>
+          </select>
+        </div>
+        <div class="gen-adv">
+          <label data-i18n="gen.window.label">Stats window</label>
+          <select id="gen-window"></select>
+        </div>
+        <div class="gen-adv">
+          <label data-i18n="gen.decay.label">Recency decay λ</label>
+          <select id="gen-decay">
+            <option value="0" data-i18n="decay.0b">0 · equal</option>
+            <option value="0.01" data-i18n="decay.light">0.01 · light</option>
+            <option value="0.03" selected data-i18n="decay.medium">0.03 · medium</option>
+            <option value="0.06" data-i18n="decay.heavy">0.06 · heavy</option>
+          </select>
+        </div>
+        <div>
+          <label data-i18n="gen.count.label">How many lines</label>
+          <input type="number" id="gen-count" value="5" min="1" max="50" />
+        </div>
+        <div class="gen-adv">
+          <label data-i18n="gen.seed.label">Seed</label>
+          <input type="text" id="gen-seed" value="2026" />
+        </div>
+        <div style="flex:0 0 auto; display:flex; gap:8px;">
+          <button class="act" id="gen-run" data-i18n="gen.run">Generate</button>
+          <button class="ghost" id="gen-newseed" data-i18n="gen.newseed">New batch</button>
+        </div>
+      </div>
+      <div class="preset-badge" id="gen-preset" style="display:none"></div>
+      <div class="method-desc" id="gen-method-desc"></div>
+      <p class="note" id="gen-note"></p>
+    </div>
+    <div class="card">
+      <h3 data-i18n="gen.results.title">Generated lines</h3>
+      <div class="combo-list" id="gen-results"><p class="muted" data-i18n="gen.results.placeholder">Click "Generate".</p></div>
+    </div>
+  </section>
+
+  <!-- ================= VALIDATE ================= -->
+  <section class="view" id="view-validate">
+    <div class="card">
+      <h3 data-i18n="val.title">Validate a combination · against all past draws</h3>
+      <p class="hint" data-i18n="val.hint">Enter a set of numbers to see how many it would have matched each past draw, the highest prize division reached, hit counts per division, and each number's historical frequency.</p>
+      <div id="val-inputs"></div>
+      <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="act" id="val-run" data-i18n="val.run">Validate</button>
+        <button class="ghost" id="val-fill-hot" data-i18n="val.fillhot">Fill hot numbers</button>
+        <button class="ghost" id="val-clear" data-i18n="val.clear">Clear</button>
+      </div>
+    </div>
+    <div class="card" id="val-result-card" style="display:none;">
+      <h3 data-i18n="val.result.title">Validation result</h3>
+      <div id="val-result"></div>
+    </div>
+  </section>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<!-- Vercel Web Analytics（浏览量统计，部署到 Vercel 并开启 Analytics 后自动生效） -->
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

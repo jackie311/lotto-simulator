@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Node (smoke test deps, if installed locally)
+node_modules/
+
+# Vercel
+.vercel/
