@@ -1,0 +1,19 @@
+{
+  "name": "Oz Lotto & Powerball Simulator",
+  "short_name": "Lotto Sim",
+  "description": "Hot & cold numbers, frequency statistics and a number generator for Oz Lotto & Powerball, built on real past draws.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f1220",
+  "theme_color": "#0f1220",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

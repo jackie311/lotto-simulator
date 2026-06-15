@@ -1,0 +1,5 @@
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+Sitemap: https://lotto-simulator-virid.vercel.app/sitemap.xml
