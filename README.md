@@ -7,7 +7,7 @@
 3. **验证 Validate** — 把一组号码对照全部历史，看能中几等奖
 4. **概览 Overview** — 热号 / 冷号 / 频率 / 形态 / 高频对统计
 
-> 🌐 **多语言**：界面支持英文 / 中文，**默认英文**，右上角一键切换。
+> 🌐 **多语言**：界面支持 English / 中文 / Español / Français / 日本語 / 한국어 共 6 种，**默认英文**，右上角一键切换。
 
 > ⚠️ 彩票每期独立随机，历史**无法**真正预测未来。本工具仅作数学实验与娱乐。
 
@@ -110,8 +110,8 @@ python build_data.py
 ## 测试
 
 ```bash
-node app/test.js        # 纯逻辑测试（无依赖）：155 项
-node app/smoke.js       # DOM 冒烟测试（需 npm i jsdom）：77 项
+node app/test.js        # 纯逻辑测试（无依赖）：191 项
+node app/smoke.js       # DOM 冒烟测试（需 npm i jsdom）：82 项
 ```
 
 ## 文件结构

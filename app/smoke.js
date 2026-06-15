@@ -28,10 +28,24 @@ function ok(name, cond) { if (cond) pass++; else { fail++; console.log('  ✗', 
 // i18n：默认英文
 ok('默认英文 tab', $$('.tab').find(t => t.dataset.view === 'overview').textContent.trim() === 'Overview');
 ok('默认英文免责声明', $('.disclaimer').textContent.includes('independent random'));
-ok('有语言切换按钮(2个)', $$('.langbtn').length === 2);
+const setLangSel = code => { const s = $('#langsel'); s.value = code; s.dispatchEvent(new window.Event('change')); };
+ok('语言下拉有6个选项', $$('#langsel option').length === 6);
 ok('英文窗口标签', $$('label').some(l => l.textContent.includes('Stats window')));
+// 切到西语验证渲染
+setLangSel('es');
+ok('西语 tab', $$('.tab').find(t => t.dataset.view === 'overview').textContent.trim() === 'Resumen');
+ok('西语动态渲染', $('#ov-meta').textContent.includes('Reglas actuales'));
+// 切到日语
+setLangSel('ja');
+ok('日语 tab', $$('.tab').find(t => t.dataset.view === 'predict').textContent.trim() === '予測');
+// 切到韩语
+setLangSel('ko');
+ok('韩语 tab', $$('.tab').find(t => t.dataset.view === 'generate').textContent.trim() === '생성');
+// 切到法语
+setLangSel('fr');
+ok('法语 tab', $$('.tab').find(t => t.dataset.view === 'validate').textContent.trim() === 'Valider');
 // 切到中文，后续断言沿用中文文案
-$$('.langbtn').find(b => b.dataset.lang === 'zh').click();
+setLangSel('zh');
 ok('切换中文 tab', $$('.tab').find(t => t.dataset.view === 'overview').textContent.trim() === '概览');
 ok('切换中文窗口标签', $$('label').some(l => l.textContent.includes('统计窗口')));
 

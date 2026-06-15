@@ -88,9 +88,15 @@ for (const game of ['ozlotto', 'powerball']) {
   ok('预设 decay 合法', GEN_METHODS.every(k => [0, 0.01, 0.03, 0.06].includes(A.GEN_PRESET[k].decay)));
   ok('预设 window 合法', GEN_METHODS.every(k => A.GEN_PRESET[k].window === 'all' || A.GEN_PRESET[k].window > 0));
 
-  // 4d-2. i18n：英文/中文每个 key 都有，且方法名/预设文案齐全
-  const enKeys = Object.keys(A.I18N.en), zhKeys = Object.keys(A.I18N.zh);
-  ok('en/zh key 集合一致', enKeys.length === zhKeys.length && enKeys.every(k => k in A.I18N.zh));
+  // 4d-2. i18n：所有语言每个 key 都齐全（无缺失/无多余），方法名/预设文案存在
+  const enKeys = Object.keys(A.I18N.en);
+  ok('LANGS 与 I18N 一致', A.LANGS.every(l => A.I18N[l.code]) && A.LANGS.length === 6);
+  for (const l of A.LANGS) {
+    const d = A.I18N[l.code], ks = Object.keys(d);
+    ok(`[${l.code}] key 数量一致`, ks.length === enKeys.length);
+    ok(`[${l.code}] 无缺失 key`, enKeys.every(k => k in d));
+    ok(`[${l.code}] 无空值`, ks.every(k => typeof d[k] === 'string' && d[k].length > 0));
+  }
   A._setState({ lang: 'en' });
   ok('英文方法名存在', GEN_METHODS.every(k => A.t('method.' + k + '.name').length > 0 && !A.t('method.' + k + '.name').startsWith('method.')));
   ok('英文预设文案存在', GEN_METHODS.every(k => A.t('preset.' + k + '.why').length > 4));
