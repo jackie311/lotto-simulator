@@ -75,6 +75,14 @@ main { padding: 20px 24px 60px; max-width: 1180px; margin: 0 auto; }
 }
 .card h3 { margin: 0 0 4px; font-size: 16px; }
 .card .hint { color: var(--muted); font-size: 12.5px; margin: 0 0 12px; }
+
+/* SEO / informational content */
+.seo-content h2 { font-size: 17px; margin: 18px 0 6px; }
+.seo-content h2:first-child { margin-top: 2px; }
+.seo-content p { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 0 0 4px; }
+.seo-content .faq h3 { font-size: 14px; margin: 14px 0 4px; }
+.seo-content .faq p { margin-bottom: 0; }
+.seo-content code { background: var(--panel2); border-radius: 4px; padding: 1px 5px; font-size: 12.5px; }
 .grow { flex: 1 1 320px; }
 
 label { font-size: 13px; color: var(--muted); display: block; margin-bottom: 4px; }
@@ -170,6 +178,18 @@ td.num { font-variant-numeric: tabular-nums; }
 .legend { display:flex; gap:14px; font-size:12px; color:var(--muted); margin-top:8px; flex-wrap:wrap; }
 .legend span::before { content:"●"; margin-right:4px; }
 .note { color: var(--muted); font-size: 12px; margin-top: 6px; }
+
+/* site footer / legal */
+.site-footer {
+  max-width: 1180px; margin: 8px auto 0; padding: 18px 24px 48px;
+  border-top: 1px solid var(--line); color: var(--muted);
+  font-size: 12px; line-height: 1.6;
+}
+.site-footer p { margin: 0 0 10px; }
+.site-footer p:last-child { margin-bottom: 0; }
+.site-footer a { color: var(--accent); }
+.site-footer .foot-strong { color: #ffb3c2; }
+.site-footer .foot-muted { opacity: .8; }
 
 /* tooltip */
 .tip {
