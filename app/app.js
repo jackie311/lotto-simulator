@@ -145,6 +145,44 @@ const I18N = {
     'seo.faq.a4': 'Draw results come from public official Australian lottery sources and are updated periodically. This is an independent project and is not affiliated with or endorsed by The Lott, Lotterywest or the Lottery Corporation — always rely on the officially published results.',
     'seo.faq.q5': 'How is the number generator different from picking at random?',
     'seo.faq.a5': 'The generator weights numbers by statistical models (frequency, overdue, Markov, Bayesian, consensus or balanced shape) and samples them with a deterministic, reproducible seed. It also offers a pure-random baseline so you can compare. None of the methods improves your real odds of winning.',
+    'seo.faq.q6': 'What are the odds of winning Oz Lotto or Powerball Division 1?',
+    'seo.faq.a6': 'Oz Lotto Division 1 odds are about 1 in 62.9 million (matching all 7 main numbers from 47). Powerball Division 1 odds are about 1 in 134.5 million (7 main numbers from 35 plus the Powerball from 20). No method changes these fixed odds.',
+    'seo.faq.q7': 'What days are Oz Lotto and Powerball drawn?',
+    'seo.faq.a7': 'Oz Lotto is drawn every Tuesday and Powerball every Thursday, in the evening Australian Eastern time. This tool updates automatically after each new draw.',
+    'seo.faq.q8': 'What are the most common Oz Lotto and Powerball numbers?',
+    'seo.faq.a8': 'You can see the most and least frequently drawn numbers across all recorded draws in the “Most & least common numbers” section and the Overview tab. Remember that frequent (“hot”) numbers are not more likely to be drawn next — each draw is independent.',
+    'seo.faq.q9': 'Is using lottery statistics or a number generator cheating or illegal?',
+    'seo.faq.a9': 'No. Analysing past results and generating number combinations is completely legal and is not cheating — it cannot influence a fair, random draw. It is simply a way to choose numbers and explore the statistics for fun.',
+    // How to play & draw schedule
+    'info.howto.h': 'How to play Oz Lotto & Powerball',
+    'info.howto.oz': '<strong>Oz Lotto</strong>: pick <strong>7 numbers from 1–47</strong>. Each draw also produces <strong>3 supplementary numbers</strong> that count toward the lower prize divisions. Oz Lotto is drawn <strong>every Tuesday</strong> (AEST). To win Division 1 you must match all 7 main numbers.',
+    'info.howto.pb': '<strong>Powerball</strong>: pick <strong>7 main numbers from 1–35</strong> plus <strong>1 Powerball from 1–20</strong>. Powerball is drawn <strong>every Thursday</strong> (AEST). To win Division 1 you must match all 7 main numbers and the Powerball.',
+    // Prize divisions & odds
+    'info.odds.h': 'Prize divisions & odds of winning',
+    'info.odds.p': 'There are 7 prize divisions in Oz Lotto and 9 in Powerball. The odds of the top prize are fixed by mathematics: <strong>Oz Lotto Division 1 is 1 in 62,891,499</strong> (the number of ways to choose 7 numbers from 47), and <strong>Powerball Division 1 is 1 in 134,490,400</strong> (7 from 35, times 20 Powerball options). The tables below show what you need to match for each division.',
+    'info.odds.note': 'No statistic, hot number or generator changes these odds — every combination is equally likely. For the official published odds of every division, see the <a href="https://www.thelott.com/oz-lotto/how-to-play" target="_blank" rel="noopener">official Oz Lotto</a> and <a href="https://www.thelott.com/powerball/how-to-play" target="_blank" rel="noopener">Powerball</a> pages.',
+    'info.div': 'Division',
+    'info.col.match': 'Numbers you must match',
+    // Most & least common numbers
+    'info.freq.h': 'Most & least common numbers (all draws)',
+    'info.freq.p': 'Across all recorded draws, these main numbers have appeared most and least often. This is a historical summary only — because every draw is independent, it <strong>does not</strong> make any number more or less likely next time.',
+    'info.freq.most': 'Most drawn',
+    'info.freq.least': 'Least drawn',
+    'info.lbl.main': 'main',
+    'info.lbl.supp': 'supp.',
+    'info.lbl.pb': 'Powerball',
+    // Glossary
+    'info.gloss.h': 'Glossary of lottery statistics terms',
+    'info.gloss.hot': '<strong>Hot number</strong> — a number drawn more often than average within the window you choose.',
+    'info.gloss.cold': '<strong>Cold number</strong> — a number drawn less often, or not for a long time.',
+    'info.gloss.overdue': '<strong>Overdue number</strong> — one that has not appeared for longer than its average gap. It is not actually “due”.',
+    'info.gloss.freq': '<strong>Frequency</strong> — how many times a number has been drawn in the selected period.',
+    'info.gloss.pairs': '<strong>Co-occurrence / pair</strong> — how often two numbers are drawn together; mostly coincidence.',
+    'info.gloss.backtest': '<strong>Walk-forward backtest</strong> — testing a method by predicting each past draw using only earlier data, to see if it really beats random.',
+    'info.gloss.fallacy': '<strong>Gambler’s fallacy</strong> — the false belief that past results change the odds of future independent draws.',
+    // About / data source
+    'info.proj.h': 'About this project & data',
+    'info.proj.p': 'This is an independent, open statistical-experiment project, not a betting service. All figures are calculated in your browser from real past Oz Lotto and Powerball draws sourced from public official results, and the dataset is refreshed automatically after each draw. The tool exists to show — honestly, with a built-in backtest — that no pattern in past numbers can predict the future. It is not affiliated with The Lott, Lotterywest or the Lottery Corporation. For 18+ only; please gamble responsibly.',
   },
   zh: {
     'app.docTitle': 'Oz Lotto & Powerball 模拟器 · 预测 / 生成 / 验证',
@@ -253,6 +291,44 @@ const I18N = {
     'seo.faq.a4': '开奖结果来自公开的澳洲官方彩票来源，并会定期更新。这是一个独立项目，与 The Lott、Lotterywest 或 Lottery Corporation 没有任何关联，也未获其认可——请始终以官方公布的结果为准。',
     'seo.faq.q5': '号码生成器和纯随机选号有什么区别？',
     'seo.faq.a5': '生成器用统计模型（频率、遗漏、马尔可夫、贝叶斯、共识或均衡形态）为号码加权，并用确定性、可复现的种子采样；同时还提供纯随机基准供你对比。但没有任何方法能真正提高你的中奖概率。',
+    'seo.faq.q6': 'Oz Lotto 或 Powerball 一等奖的中奖几率是多少？',
+    'seo.faq.a6': 'Oz Lotto 一等奖几率约为 1/6290 万（要命中全部 7 个主号,号池 1–47）。Powerball 一等奖几率约为 1/1.345 亿（7 个主号取自 1–35,外加 1 个 Powerball 取自 1–20）。任何方法都改变不了这些固定几率。',
+    'seo.faq.q7': 'Oz Lotto 和 Powerball 分别在星期几开奖？',
+    'seo.faq.a7': 'Oz Lotto 每周二开奖,Powerball 每周四开奖,均为澳洲东部时间晚间。本工具会在每期开奖后自动更新。',
+    'seo.faq.q8': 'Oz Lotto 和 Powerball 最常出现的号码是哪些？',
+    'seo.faq.a8': '你可以在"历史最常/最少出现号码"区块和"概览"页查看全部历史里出现最多和最少的号码。请记住,高频("热")号码并不会因此更可能在下一期被抽中——每期都是独立的。',
+    'seo.faq.q9': '用彩票统计或号码生成器算是作弊或违法吗？',
+    'seo.faq.a9': '不算。分析往期结果、生成号码组合完全合法,也不是作弊——它无法影响一场公平的随机开奖。这只是选号和探索统计的一种方式,图个乐趣。',
+    // 玩法与开奖时间
+    'info.howto.h': '怎么玩 Oz Lotto 与 Powerball',
+    'info.howto.oz': '<strong>Oz Lotto</strong>:从 <strong>1–47</strong> 里选 <strong>7 个号码</strong>。每期还会另开出 <strong>3 个补充号(supplementary)</strong>,计入较低奖级。Oz Lotto <strong>每周二</strong>开奖(澳东时间)。要中一等奖,必须命中全部 7 个主号。',
+    'info.howto.pb': '<strong>Powerball</strong>:从 <strong>1–35</strong> 选 <strong>7 个主号</strong>,再加 <strong>1 个 Powerball(取自 1–20)</strong>。Powerball <strong>每周四</strong>开奖(澳东时间)。要中一等奖,必须命中全部 7 个主号外加那个 Powerball。',
+    // 奖级与几率
+    'info.odds.h': '奖级与中奖几率',
+    'info.odds.p': 'Oz Lotto 有 7 个奖级,Powerball 有 9 个。头奖几率由数学固定决定:<strong>Oz Lotto 一等奖为 1/62,891,499</strong>(即从 47 个号里选 7 个的组合数),<strong>Powerball 一等奖为 1/134,490,400</strong>(从 35 选 7,再乘以 20 个 Powerball 选项)。下表列出每个奖级需要命中什么。',
+    'info.odds.note': '任何统计、热号或生成器都改变不了这些几率——每种组合的概率都相等。每个奖级的官方公布几率,请见 <a href="https://www.thelott.com/oz-lotto/how-to-play" target="_blank" rel="noopener">Oz Lotto 官方</a> 和 <a href="https://www.thelott.com/powerball/how-to-play" target="_blank" rel="noopener">Powerball 官方</a> 页面。',
+    'info.div': '奖级',
+    'info.col.match': '需要命中',
+    // 历史最常/最少出现号码
+    'info.freq.h': '历史最常 / 最少出现的号码(全部开奖)',
+    'info.freq.p': '在全部已记录的开奖中,以下主号出现得最多和最少。这只是历史统计——由于每期都是独立的,它<strong>并不会</strong>让任何号码下一期更可能或更不可能出现。',
+    'info.freq.most': '出现最多',
+    'info.freq.least': '出现最少',
+    'info.lbl.main': '主号',
+    'info.lbl.supp': '补充号',
+    'info.lbl.pb': 'Powerball',
+    // 术语表
+    'info.gloss.h': '彩票统计术语表',
+    'info.gloss.hot': '<strong>热号</strong> —— 在你所选窗口内出现次数高于平均的号码。',
+    'info.gloss.cold': '<strong>冷号</strong> —— 出现较少、或很久没出现的号码。',
+    'info.gloss.overdue': '<strong>遗漏号(overdue)</strong> —— 距上次出现的间隔已超过其平均间隔的号码。它其实并非"该出了"。',
+    'info.gloss.freq': '<strong>频率</strong> —— 某号码在所选时段内被抽出的次数。',
+    'info.gloss.pairs': '<strong>共现 / 号码对</strong> —— 两个号码一起被抽出的频繁程度;多半是巧合。',
+    'info.gloss.backtest': '<strong>前向滚动回测</strong> —— 只用某期之前的数据去预测该期,逐期推进,检验某方法是否真能跑赢随机。',
+    'info.gloss.fallacy': '<strong>赌徒谬误</strong> —— 误以为过去的结果会改变未来独立开奖的概率。',
+    // 关于本项目与数据
+    'info.proj.h': '关于本项目与数据',
+    'info.proj.p': '这是一个独立、开放的统计实验项目,不是投注服务。所有数字都在你的浏览器里、基于来自公开官方结果的真实 Oz Lotto 与 Powerball 往期开奖计算得出,数据集会在每期开奖后自动刷新。本工具的目的,是用内置回测诚实地证明:往期号码里没有任何规律能预测未来。它与 The Lott、Lotterywest 或 Lottery Corporation 没有关联。仅限 18 岁以上;请理性博彩。',
   },
   es: {
     'app.docTitle': 'Simulador de Oz Lotto y Powerball · Predecir / Generar / Validar',
@@ -361,6 +437,44 @@ const I18N = {
     'seo.faq.a4': 'Los resultados provienen de fuentes oficiales públicas de la lotería australiana y se actualizan periódicamente. Este es un proyecto independiente y no está afiliado ni respaldado por The Lott, Lotterywest ni Lottery Corporation; confía siempre en los resultados publicados oficialmente.',
     'seo.faq.q5': '¿En qué se diferencia el generador de números de elegir al azar?',
     'seo.faq.a5': 'El generador pondera los números mediante modelos estadísticos (frecuencia, atraso, Markov, bayesiano, consenso o forma equilibrada) y los muestrea con una semilla determinista y reproducible. También ofrece una base puramente aleatoria para comparar. Ningún método mejora tus probabilidades reales de ganar.',
+    'seo.faq.q6': '¿Cuáles son las probabilidades de ganar la División 1 de Oz Lotto o Powerball?',
+    'seo.faq.a6': 'Las probabilidades de la División 1 de Oz Lotto son de aproximadamente 1 entre 62,9 millones (acertar los 7 números principales de 47). Las de Powerball son de aproximadamente 1 entre 134,5 millones (7 números principales de 35 más el Powerball de 20). Ningún método cambia estas probabilidades fijas.',
+    'seo.faq.q7': '¿Qué días se sortean Oz Lotto y Powerball?',
+    'seo.faq.a7': 'Oz Lotto se sortea cada martes y Powerball cada jueves, por la noche en hora del este de Australia. Esta herramienta se actualiza automáticamente tras cada nuevo sorteo.',
+    'seo.faq.q8': '¿Cuáles son los números más comunes de Oz Lotto y Powerball?',
+    'seo.faq.a8': 'Puedes ver los números más y menos sorteados de todo el historial en la sección «Números más y menos comunes» y en la pestaña Resumen. Recuerda que los números frecuentes («calientes») no son más probables en el próximo sorteo: cada sorteo es independiente.',
+    'seo.faq.q9': '¿Usar estadísticas de lotería o un generador de números es trampa o ilegal?',
+    'seo.faq.a9': 'No. Analizar resultados pasados y generar combinaciones es totalmente legal y no es trampa: no puede influir en un sorteo justo y aleatorio. Es solo una forma de elegir números y explorar las estadísticas por diversión.',
+    // Cómo jugar y calendario
+    'info.howto.h': 'Cómo jugar a Oz Lotto y Powerball',
+    'info.howto.oz': '<strong>Oz Lotto</strong>: elige <strong>7 números del 1 al 47</strong>. Cada sorteo también produce <strong>3 números suplementarios</strong> que cuentan para las divisiones inferiores. Oz Lotto se sortea <strong>cada martes</strong> (hora del este de Australia). Para ganar la División 1 debes acertar los 7 números principales.',
+    'info.howto.pb': '<strong>Powerball</strong>: elige <strong>7 números principales del 1 al 35</strong> más <strong>1 Powerball del 1 al 20</strong>. Powerball se sortea <strong>cada jueves</strong> (hora del este de Australia). Para ganar la División 1 debes acertar los 7 números principales y el Powerball.',
+    // Divisiones y probabilidades
+    'info.odds.h': 'Divisiones de premios y probabilidades de ganar',
+    'info.odds.p': 'Oz Lotto tiene 7 divisiones de premios y Powerball 9. Las probabilidades del premio mayor están fijadas por las matemáticas: <strong>la División 1 de Oz Lotto es 1 entre 62.891.499</strong> (las formas de elegir 7 números de 47) y <strong>la División 1 de Powerball es 1 entre 134.490.400</strong> (7 de 35, por 20 opciones de Powerball). Las tablas siguientes muestran qué debes acertar en cada división.',
+    'info.odds.note': 'Ninguna estadística, número caliente o generador cambia estas probabilidades: todas las combinaciones son igual de probables. Para las probabilidades oficiales publicadas de cada división, consulta las páginas oficiales de <a href="https://www.thelott.com/oz-lotto/how-to-play" target="_blank" rel="noopener">Oz Lotto</a> y <a href="https://www.thelott.com/powerball/how-to-play" target="_blank" rel="noopener">Powerball</a>.',
+    'info.div': 'División',
+    'info.col.match': 'Números que debes acertar',
+    // Números más y menos comunes
+    'info.freq.h': 'Números más y menos comunes (todos los sorteos)',
+    'info.freq.p': 'En todos los sorteos registrados, estos números principales han salido más y menos veces. Es solo un resumen histórico: como cada sorteo es independiente, <strong>no</strong> hace que ningún número sea más o menos probable la próxima vez.',
+    'info.freq.most': 'Más sorteados',
+    'info.freq.least': 'Menos sorteados',
+    'info.lbl.main': 'princ.',
+    'info.lbl.supp': 'supl.',
+    'info.lbl.pb': 'Powerball',
+    // Glosario
+    'info.gloss.h': 'Glosario de términos de estadística de lotería',
+    'info.gloss.hot': '<strong>Número caliente</strong>: un número que sale más que la media dentro de la ventana que elijas.',
+    'info.gloss.cold': '<strong>Número frío</strong>: un número que sale menos, o que lleva mucho sin aparecer.',
+    'info.gloss.overdue': '<strong>Número atrasado</strong>: uno que lleva más tiempo sin aparecer que su intervalo medio. En realidad no «toca».',
+    'info.gloss.freq': '<strong>Frecuencia</strong>: cuántas veces se ha sorteado un número en el periodo seleccionado.',
+    'info.gloss.pairs': '<strong>Coocurrencia / par</strong>: con qué frecuencia salen juntos dos números; casi siempre casualidad.',
+    'info.gloss.backtest': '<strong>Backtest de avance progresivo</strong>: probar un método prediciendo cada sorteo pasado usando solo datos anteriores, para ver si realmente supera al azar.',
+    'info.gloss.fallacy': '<strong>Falacia del jugador</strong>: la creencia falsa de que los resultados pasados cambian las probabilidades de futuros sorteos independientes.',
+    // Acerca del proyecto y los datos
+    'info.proj.h': 'Acerca de este proyecto y los datos',
+    'info.proj.p': 'Este es un proyecto independiente y abierto de experimentación estadística, no un servicio de apuestas. Todas las cifras se calculan en tu navegador a partir de sorteos reales pasados de Oz Lotto y Powerball obtenidos de resultados oficiales públicos, y el conjunto de datos se actualiza automáticamente tras cada sorteo. La herramienta existe para mostrar —honestamente, con un backtest integrado— que ningún patrón en los números pasados puede predecir el futuro. No está afiliada a The Lott, Lotterywest ni Lottery Corporation. Solo para mayores de 18 años; juega con responsabilidad.',
   },
   fr: {
     'app.docTitle': 'Simulateur Oz Lotto & Powerball · Prédire / Générer / Valider',
@@ -469,6 +583,44 @@ const I18N = {
     'seo.faq.a4': 'Les résultats proviennent de sources officielles publiques de la loterie australienne et sont mis à jour périodiquement. Ce projet est indépendant et n’est ni affilié ni approuvé par The Lott, Lotterywest ou Lottery Corporation — fiez-vous toujours aux résultats officiellement publiés.',
     'seo.faq.q5': 'En quoi le générateur de numéros diffère-t-il d’un tirage au hasard ?',
     'seo.faq.a5': 'Le générateur pondère les numéros par des modèles statistiques (fréquence, retard, Markov, bayésien, consensus ou forme équilibrée) et les échantillonne avec une graine déterministe et reproductible. Il propose aussi une base purement aléatoire pour comparer. Aucune méthode n’améliore vos chances réelles de gagner.',
+    'seo.faq.q6': 'Quelles sont les chances de gagner la Division 1 d’Oz Lotto ou de Powerball ?',
+    'seo.faq.a6': 'Les chances de la Division 1 d’Oz Lotto sont d’environ 1 sur 62,9 millions (trouver les 7 numéros principaux parmi 47). Celles de Powerball sont d’environ 1 sur 134,5 millions (7 numéros principaux parmi 35 plus le Powerball parmi 20). Aucune méthode ne change ces chances fixes.',
+    'seo.faq.q7': 'Quels jours ont lieu les tirages d’Oz Lotto et de Powerball ?',
+    'seo.faq.a7': 'Oz Lotto est tiré chaque mardi et Powerball chaque jeudi, en soirée à l’heure de l’Est de l’Australie. Cet outil se met à jour automatiquement après chaque nouveau tirage.',
+    'seo.faq.q8': 'Quels sont les numéros les plus fréquents d’Oz Lotto et de Powerball ?',
+    'seo.faq.a8': 'Vous pouvez voir les numéros les plus et les moins tirés sur tout l’historique dans la section « Numéros les plus et les moins fréquents » et dans l’onglet Aperçu. Rappelez-vous que les numéros fréquents (« chauds ») ne sont pas plus probables au prochain tirage : chaque tirage est indépendant.',
+    'seo.faq.q9': 'Utiliser des statistiques de loterie ou un générateur de numéros est-il de la triche ou illégal ?',
+    'seo.faq.a9': 'Non. Analyser les résultats passés et générer des combinaisons est tout à fait légal et n’est pas de la triche : cela ne peut pas influencer un tirage équitable et aléatoire. C’est simplement une façon de choisir des numéros et d’explorer les statistiques pour le plaisir.',
+    // Comment jouer & calendrier
+    'info.howto.h': 'Comment jouer à Oz Lotto et Powerball',
+    'info.howto.oz': '<strong>Oz Lotto</strong> : choisissez <strong>7 numéros de 1 à 47</strong>. Chaque tirage produit aussi <strong>3 numéros complémentaires</strong> qui comptent pour les divisions inférieures. Oz Lotto est tiré <strong>chaque mardi</strong> (heure de l’Est australien). Pour gagner la Division 1, vous devez trouver les 7 numéros principaux.',
+    'info.howto.pb': '<strong>Powerball</strong> : choisissez <strong>7 numéros principaux de 1 à 35</strong> plus <strong>1 Powerball de 1 à 20</strong>. Powerball est tiré <strong>chaque jeudi</strong> (heure de l’Est australien). Pour gagner la Division 1, vous devez trouver les 7 numéros principaux et le Powerball.',
+    // Divisions & chances
+    'info.odds.h': 'Divisions de prix et chances de gagner',
+    'info.odds.p': 'Oz Lotto compte 7 divisions de prix et Powerball 9. Les chances du gros lot sont fixées par les mathématiques : <strong>la Division 1 d’Oz Lotto est de 1 sur 62 891 499</strong> (le nombre de façons de choisir 7 numéros parmi 47), et <strong>la Division 1 de Powerball est de 1 sur 134 490 400</strong> (7 parmi 35, multiplié par 20 options de Powerball). Les tableaux ci-dessous indiquent ce qu’il faut trouver pour chaque division.',
+    'info.odds.note': 'Aucune statistique, aucun numéro chaud ni générateur ne change ces chances : toutes les combinaisons sont également probables. Pour les chances officielles publiées de chaque division, consultez les pages officielles <a href="https://www.thelott.com/oz-lotto/how-to-play" target="_blank" rel="noopener">Oz Lotto</a> et <a href="https://www.thelott.com/powerball/how-to-play" target="_blank" rel="noopener">Powerball</a>.',
+    'info.div': 'Division',
+    'info.col.match': 'Numéros à trouver',
+    // Numéros les plus et les moins fréquents
+    'info.freq.h': 'Numéros les plus et les moins fréquents (tous les tirages)',
+    'info.freq.p': 'Sur tous les tirages enregistrés, ces numéros principaux sont sortis le plus et le moins souvent. Ce n’est qu’un résumé historique : comme chaque tirage est indépendant, cela <strong>ne rend</strong> aucun numéro plus ou moins probable la prochaine fois.',
+    'info.freq.most': 'Les plus tirés',
+    'info.freq.least': 'Les moins tirés',
+    'info.lbl.main': 'princ.',
+    'info.lbl.supp': 'compl.',
+    'info.lbl.pb': 'Powerball',
+    // Glossaire
+    'info.gloss.h': 'Glossaire des termes de statistiques de loterie',
+    'info.gloss.hot': '<strong>Numéro chaud</strong> — un numéro tiré plus souvent que la moyenne dans la fenêtre que vous choisissez.',
+    'info.gloss.cold': '<strong>Numéro froid</strong> — un numéro tiré moins souvent, ou absent depuis longtemps.',
+    'info.gloss.overdue': '<strong>Numéro en retard</strong> — un numéro absent depuis plus longtemps que son intervalle moyen. Il n’est pas vraiment « dû ».',
+    'info.gloss.freq': '<strong>Fréquence</strong> — le nombre de fois qu’un numéro a été tiré sur la période choisie.',
+    'info.gloss.pairs': '<strong>Cooccurrence / paire</strong> — la fréquence à laquelle deux numéros sortent ensemble ; surtout une coïncidence.',
+    'info.gloss.backtest': '<strong>Backtest en avance progressive</strong> — tester une méthode en prédisant chaque tirage passé à partir des seules données antérieures, pour voir si elle bat vraiment le hasard.',
+    'info.gloss.fallacy': '<strong>Sophisme du joueur</strong> — la croyance erronée que les résultats passés modifient les chances de futurs tirages indépendants.',
+    // À propos du projet et des données
+    'info.proj.h': 'À propos de ce projet et des données',
+    'info.proj.p': 'Il s’agit d’un projet d’expérimentation statistique indépendant et ouvert, et non d’un service de paris. Tous les chiffres sont calculés dans votre navigateur à partir de vrais tirages passés d’Oz Lotto et Powerball issus de résultats officiels publics, et le jeu de données est actualisé automatiquement après chaque tirage. L’outil existe pour montrer — honnêtement, avec un backtest intégré — qu’aucun motif dans les numéros passés ne peut prédire l’avenir. Il n’est pas affilié à The Lott, Lotterywest ni Lottery Corporation. Réservé aux 18 ans et plus ; jouez de manière responsable.',
   },
   ja: {
     'app.docTitle': 'Oz Lotto & Powerball シミュレーター · 予測 / 生成 / 検証',
@@ -577,6 +729,44 @@ const I18N = {
     'seo.faq.a4': '抽選結果は公開されたオーストラリアの公式宝くじソースから取得し、定期的に更新されます。本プロジェクトは独立しており、The Lott・Lotterywest・Lottery Corporation とは一切提携・承認関係にありません——常に公式に公表された結果を確認してください。',
     'seo.faq.q5': '数字ジェネレーターは無作為に選ぶのと何が違いますか？',
     'seo.faq.a5': 'ジェネレーターは統計モデル（頻度・出ていない間隔・マルコフ・ベイズ・コンセンサス・バランス形状）で数字に重みを付け、決定論的で再現可能なシードでサンプリングします。比較用に純粋な無作為ベースラインも用意しています。いずれの手法も実際の当せん確率を高めるものではありません。',
+    'seo.faq.q6': 'Oz Lotto や Powerball の1等の当せん確率はどれくらいですか？',
+    'seo.faq.a6': 'Oz Lotto の1等の確率は約 6,290万分の1です（1〜47 から主番号7個すべてを的中）。Powerball の1等は約 1億3,450万分の1です（1〜35 から主番号7個に加え、1〜20 の Powerball を的中）。どの手法もこの固定された確率を変えることはできません。',
+    'seo.faq.q7': 'Oz Lotto と Powerball は何曜日に抽選されますか？',
+    'seo.faq.a7': 'Oz Lotto は毎週火曜、Powerball は毎週木曜、いずれもオーストラリア東部時間の夜に抽選されます。本ツールは各抽選後に自動で更新されます。',
+    'seo.faq.q8': 'Oz Lotto と Powerball で最もよく出る番号は何ですか？',
+    'seo.faq.a8': '「最も多い／少ない番号」セクションと「概要」タブで、全記録のうち最も多く・少なく出た番号を確認できます。高頻度（「ホット」）の番号が次回出やすいわけではない点に注意してください——各抽選は独立しています。',
+    'seo.faq.q9': '宝くじの統計や番号ジェネレーターを使うのは不正やイカサマ、違法ですか？',
+    'seo.faq.a9': 'いいえ。過去の結果を分析して組み合わせを生成するのは完全に合法で、不正でもありません——公正な無作為抽選に影響を与えることはできません。番号を選び、統計を楽しく調べるための一手段にすぎません。',
+    // 遊び方と抽選日
+    'info.howto.h': 'Oz Lotto と Powerball の遊び方',
+    'info.howto.oz': '<strong>Oz Lotto</strong>：<strong>1〜47 から7個</strong>の番号を選びます。各抽選では下位等級に関わる<strong>3個の補助番号（supplementary）</strong>も出ます。Oz Lotto は<strong>毎週火曜</strong>（豪東部時間）に抽選。1等を当てるには主番号7個すべてを的中させる必要があります。',
+    'info.howto.pb': '<strong>Powerball</strong>：<strong>1〜35 から主番号7個</strong>に加え、<strong>1〜20 から Powerball を1個</strong>選びます。Powerball は<strong>毎週木曜</strong>（豪東部時間）に抽選。1等を当てるには主番号7個すべてと Powerball を的中させる必要があります。',
+    // 等級と確率
+    'info.odds.h': '賞の等級と当せん確率',
+    'info.odds.p': 'Oz Lotto には7つ、Powerball には9つの等級があります。最高賞の確率は数学的に決まっています：<strong>Oz Lotto の1等は 62,891,499分の1</strong>（47 から7個を選ぶ組み合わせ数）、<strong>Powerball の1等は 134,490,400分の1</strong>（35 から7個 × Powerball の20通り）。下の表に各等級で的中が必要な内容を示します。',
+    'info.odds.note': 'どんな統計・ホット番号・ジェネレーターもこの確率を変えません——あらゆる組み合わせは等しく起こりえます。各等級の公式の確率は <a href="https://www.thelott.com/oz-lotto/how-to-play" target="_blank" rel="noopener">Oz Lotto 公式</a> と <a href="https://www.thelott.com/powerball/how-to-play" target="_blank" rel="noopener">Powerball 公式</a> のページをご覧ください。',
+    'info.div': '等級',
+    'info.col.match': '的中が必要な内容',
+    // 最も多い／少ない番号
+    'info.freq.h': '最も多い／少ない番号（全抽選）',
+    'info.freq.p': '記録されたすべての抽選で、これらの主番号が最も多く・少なく出ています。これは過去の集計にすぎません——各抽選は独立しているため、どの番号も次回出やすく／出にくくなることは<strong>ありません</strong>。',
+    'info.freq.most': '最多出現',
+    'info.freq.least': '最少出現',
+    'info.lbl.main': '主番号',
+    'info.lbl.supp': '補助',
+    'info.lbl.pb': 'Powerball',
+    // 用語集
+    'info.gloss.h': '宝くじ統計の用語集',
+    'info.gloss.hot': '<strong>ホット番号</strong> — 選んだウィンドウ内で平均より多く出ている番号。',
+    'info.gloss.cold': '<strong>コールド番号</strong> — 出現が少ない、または長く出ていない番号。',
+    'info.gloss.overdue': '<strong>遅延番号（overdue）</strong> — 平均的な間隔より長く出ていない番号。実際に「出る番」というわけではありません。',
+    'info.gloss.freq': '<strong>頻度</strong> — 選択した期間に番号が抽選された回数。',
+    'info.gloss.pairs': '<strong>共起／ペア</strong> — 2つの番号が一緒に出る頻度；ほとんどは偶然です。',
+    'info.gloss.backtest': '<strong>ウォークフォワード・バックテスト</strong> — それ以前のデータだけで各過去抽選を予測し、本当に無作為を上回るかを検証する方法。',
+    'info.gloss.fallacy': '<strong>ギャンブラーの誤謬</strong> — 過去の結果が将来の独立した抽選の確率を変えるという誤った思い込み。',
+    // プロジェクトとデータについて
+    'info.proj.h': '本プロジェクトとデータについて',
+    'info.proj.p': 'これは独立したオープンな統計実験プロジェクトであり、賭けのサービスではありません。すべての数値は、公開された公式結果に基づく実際の Oz Lotto・Powerball の過去抽選から、あなたのブラウザ内で計算され、データセットは各抽選後に自動更新されます。本ツールは——内蔵のバックテストによって正直に——過去の番号のいかなるパターンも未来を予測できないことを示すために存在します。The Lott・Lotterywest・Lottery Corporation とは提携していません。18歳以上限定；責任あるギャンブルを。',
   },
   ko: {
     'app.docTitle': 'Oz Lotto & Powerball 시뮬레이터 · 예측 / 생성 / 검증',
@@ -685,6 +875,44 @@ const I18N = {
     'seo.faq.a4': '추첨 결과는 공개된 호주 공식 복권 출처에서 가져오며 주기적으로 업데이트됩니다. 본 프로젝트는 독립적이며 The Lott, Lotterywest 또는 Lottery Corporation과 제휴하거나 보증받지 않았습니다 — 항상 공식적으로 공표된 결과를 신뢰하세요.',
     'seo.faq.q5': '번호 생성기는 무작위로 고르는 것과 어떻게 다른가요?',
     'seo.faq.a5': '생성기는 통계 모델(빈도, 결석, 마르코프, 베이즈, 컨센서스 또는 균형 형태)로 번호에 가중치를 주고 결정론적이고 재현 가능한 시드로 샘플링합니다. 비교용 순수 무작위 기준도 제공합니다. 어떤 기법도 실제 당첨 확률을 높이지 않습니다.',
+    'seo.faq.q6': 'Oz Lotto 또는 Powerball 1등 당첨 확률은 얼마인가요?',
+    'seo.faq.a6': 'Oz Lotto 1등 확률은 약 6,290만분의 1입니다(1–47에서 메인 번호 7개 모두 일치). Powerball 1등 확률은 약 1억 3,450만분의 1입니다(1–35에서 메인 7개 + 1–20에서 Powerball). 어떤 방법도 이 고정된 확률을 바꾸지 못합니다.',
+    'seo.faq.q7': 'Oz Lotto와 Powerball은 무슨 요일에 추첨하나요?',
+    'seo.faq.a7': 'Oz Lotto는 매주 화요일, Powerball은 매주 목요일, 모두 호주 동부 시간 저녁에 추첨합니다. 이 도구는 새 추첨이 끝날 때마다 자동으로 업데이트됩니다.',
+    'seo.faq.q8': 'Oz Lotto와 Powerball에서 가장 자주 나오는 번호는 무엇인가요?',
+    'seo.faq.a8': '"가장 많이/적게 나온 번호" 섹션과 "개요" 탭에서 전체 기록 중 가장 많이·적게 나온 번호를 볼 수 있습니다. 자주 나온("핫") 번호가 다음에 더 잘 나오는 것은 아니라는 점을 기억하세요 — 각 추첨은 독립적입니다.',
+    'seo.faq.q9': '복권 통계나 번호 생성기를 쓰는 것은 부정행위이거나 불법인가요?',
+    'seo.faq.a9': '아니요. 과거 결과를 분석하고 조합을 생성하는 것은 전적으로 합법이며 부정행위가 아닙니다 — 공정한 무작위 추첨에 영향을 줄 수 없습니다. 그저 번호를 고르고 통계를 재미로 탐색하는 방법일 뿐입니다.',
+    // 게임 방법 및 추첨 일정
+    'info.howto.h': 'Oz Lotto와 Powerball 게임 방법',
+    'info.howto.oz': '<strong>Oz Lotto</strong>: <strong>1–47에서 7개</strong>의 번호를 고릅니다. 각 추첨에서는 하위 등급에 반영되는 <strong>보조 번호 3개(supplementary)</strong>도 나옵니다. Oz Lotto는 <strong>매주 화요일</strong>(호주 동부 시간) 추첨합니다. 1등에 당첨되려면 메인 번호 7개를 모두 맞혀야 합니다.',
+    'info.howto.pb': '<strong>Powerball</strong>: <strong>1–35에서 메인 번호 7개</strong>에 더해 <strong>1–20에서 Powerball 1개</strong>를 고릅니다. Powerball은 <strong>매주 목요일</strong>(호주 동부 시간) 추첨합니다. 1등에 당첨되려면 메인 번호 7개와 Powerball을 모두 맞혀야 합니다.',
+    // 등급 및 확률
+    'info.odds.h': '상금 등급 및 당첨 확률',
+    'info.odds.p': 'Oz Lotto에는 7개, Powerball에는 9개의 상금 등급이 있습니다. 1등 확률은 수학적으로 고정되어 있습니다: <strong>Oz Lotto 1등은 62,891,499분의 1</strong>(47에서 7개를 고르는 조합 수), <strong>Powerball 1등은 134,490,400분의 1</strong>(35에서 7개 × Powerball 20가지). 아래 표는 각 등급에서 무엇을 맞혀야 하는지 보여줍니다.',
+    'info.odds.note': '어떤 통계, 핫 번호, 생성기도 이 확률을 바꾸지 못합니다 — 모든 조합은 동일하게 가능성이 있습니다. 각 등급의 공식 발표 확률은 <a href="https://www.thelott.com/oz-lotto/how-to-play" target="_blank" rel="noopener">Oz Lotto 공식</a> 및 <a href="https://www.thelott.com/powerball/how-to-play" target="_blank" rel="noopener">Powerball 공식</a> 페이지를 참고하세요.',
+    'info.div': '등급',
+    'info.col.match': '맞혀야 하는 번호',
+    // 가장 많이/적게 나온 번호
+    'info.freq.h': '가장 많이/적게 나온 번호(전체 추첨)',
+    'info.freq.p': '기록된 모든 추첨에서 이 메인 번호들이 가장 많이·적게 나왔습니다. 이는 과거 요약일 뿐입니다 — 각 추첨은 독립적이므로 어떤 번호도 다음에 더 잘 나오거나 덜 나오게 되지 <strong>않습니다</strong>.',
+    'info.freq.most': '최다 출현',
+    'info.freq.least': '최소 출현',
+    'info.lbl.main': '메인',
+    'info.lbl.supp': '보조',
+    'info.lbl.pb': 'Powerball',
+    // 용어집
+    'info.gloss.h': '복권 통계 용어집',
+    'info.gloss.hot': '<strong>핫 번호</strong> — 선택한 창에서 평균보다 자주 나온 번호.',
+    'info.gloss.cold': '<strong>콜드 번호</strong> — 덜 나오거나 오랫동안 나오지 않은 번호.',
+    'info.gloss.overdue': '<strong>지연 번호(overdue)</strong> — 평균 간격보다 오래 나오지 않은 번호. 실제로 "나올 차례"는 아닙니다.',
+    'info.gloss.freq': '<strong>빈도</strong> — 선택한 기간에 번호가 추첨된 횟수.',
+    'info.gloss.pairs': '<strong>동시출현 / 쌍</strong> — 두 번호가 함께 나오는 빈도; 대부분 우연입니다.',
+    'info.gloss.backtest': '<strong>워크포워드 백테스트</strong> — 이전 데이터만으로 각 과거 추첨을 예측해, 정말 무작위를 능가하는지 검증하는 방법.',
+    'info.gloss.fallacy': '<strong>도박사의 오류</strong> — 과거 결과가 미래의 독립적 추첨 확률을 바꾼다는 잘못된 믿음.',
+    // 프로젝트 및 데이터 소개
+    'info.proj.h': '이 프로젝트와 데이터 소개',
+    'info.proj.p': '이것은 독립적이고 공개된 통계 실험 프로젝트이며 베팅 서비스가 아닙니다. 모든 수치는 공개된 공식 결과에 기반한 실제 Oz Lotto・Powerball 과거 추첨에서 브라우저 내에서 계산되며, 데이터셋은 각 추첨 후 자동으로 갱신됩니다. 이 도구는 내장된 백테스트로 — 정직하게 — 과거 번호의 어떤 패턴도 미래를 예측할 수 없음을 보여주기 위해 존재합니다. The Lott, Lotterywest 또는 Lottery Corporation과 제휴하지 않았습니다. 만 18세 이상 전용이며, 책임감 있게 즐기세요.',
   },
 };
 function t(key, vars) {
@@ -1519,6 +1747,7 @@ function setLang(lang) {
   if (sel) sel.value = lang;
   applyStaticI18n();
   // 刷新依赖语言的动态 UI
+  renderInfoDynamic();
   fillWindowSelects();
   buildValidatorInputs();
   updateGenMethodDesc();
@@ -1527,6 +1756,37 @@ function setLang(lang) {
   $('#gen-results').innerHTML = `<p class="muted">${t('gen.results.placeholder')}</p>`;
   $('#pr-backtest').innerHTML = `<p class="muted">${t('bt.placeholder')}</p>`;
   rerender();
+}
+
+/* ---------- 信息区：奖级表 + 历史最常/最少号码（覆盖两款游戏，常驻可索引） ---------- */
+function renderInfoDynamic() {
+  if (typeof document === 'undefined') return;
+  const tHost = $('#info-divtables'), fHost = $('#info-freq');
+  if (!tHost || !fHost) return;
+  const games = ['ozlotto', 'powerball'];
+  const Lm = t('info.lbl.main'), Ls = t('info.lbl.supp'), Lp = t('info.lbl.pb');
+  tHost.innerHTML = games.map(g => {
+    const rows = DIVISIONS[g].map(d => {
+      let m = `${d.main} ${Lm}`;
+      if (d.supp) m += ` + ${d.supp} ${Ls}`;
+      if (d.pb) m += ` + ${Lp}`;
+      return `<tr><td>${t('info.div')} ${d.div}</td><td>${m}</td></tr>`;
+    }).join('');
+    return `<div class="info-game"><h3>${DATA[g].name}</h3>` +
+      `<table class="info-table"><thead><tr><th>${t('info.div')}</th><th>${t('info.col.match')}</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  }).join('');
+  fHost.innerHTML = games.map(g => {
+    const r = DATA[g].rules, draws = DATA[g].draws;
+    const freq = new Array(r.mainMax + 1).fill(0);
+    draws.forEach(d => d.main.forEach(n => { freq[n]++; }));
+    const arr = []; for (let n = 1; n <= r.mainMax; n++) arr.push({ n, f: freq[n] });
+    const most = [...arr].sort((a, b) => b.f - a.f || a.n - b.n).slice(0, 6);
+    const least = [...arr].sort((a, b) => a.f - b.f || a.n - b.n).slice(0, 6);
+    const fmt = xs => xs.map(x => `${x.n}<span class="muted"> (${x.f}${t('unit.times')})</span>`).join(', ');
+    return `<p class="info-game"><b>${DATA[g].name}</b> · ${draws.length} ${t('unit.draws')}<br>` +
+      `<b>${t('info.freq.most')}:</b> ${fmt(most)}<br>` +
+      `<b>${t('info.freq.least')}:</b> ${fmt(least)}</p>`;
+  }).join('');
 }
 
 /* ---------- 事件绑定 ---------- */
@@ -1567,6 +1827,7 @@ function init() {
   buildValidatorInputs();
   updateGenMethodDesc();
   updateGenMode();
+  renderInfoDynamic();
   renderOverview();
 }
 

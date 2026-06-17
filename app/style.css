@@ -83,6 +83,17 @@ main { padding: 20px 24px 60px; max-width: 1180px; margin: 0 auto; }
 .seo-content .faq h3 { font-size: 14px; margin: 14px 0 4px; }
 .seo-content .faq p { margin-bottom: 0; }
 .seo-content code { background: var(--panel2); border-radius: 4px; padding: 1px 5px; font-size: 12.5px; }
+.seo-content a { color: var(--accent); }
+.seo-content .glossary { margin: 4px 0 0; padding-left: 18px; }
+.seo-content .glossary li { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 4px; }
+.seo-content .glossary li strong { color: var(--txt); }
+.info-game { margin: 8px 0 12px; }
+.info-game h3 { font-size: 14px; margin: 0 0 6px; }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.info-table th, .info-table td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+.info-table th { color: var(--muted); font-weight: 600; }
+p.info-game { color: var(--muted); font-size: 13.5px; line-height: 1.7; }
+p.info-game b { color: var(--txt); }
 .grow { flex: 1 1 320px; }
 
 label { font-size: 13px; color: var(--muted); display: block; margin-bottom: 4px; }

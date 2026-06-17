@@ -103,6 +103,38 @@
         "@type": "Answer",
         "text": "The generator weights numbers by statistical models (frequency, overdue, Markov, Bayesian, consensus or balanced shape) and samples them with a deterministic, reproducible seed. It also offers a pure-random baseline so you can compare. None of the methods improves your real odds of winning."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the odds of winning Oz Lotto or Powerball Division 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oz Lotto Division 1 odds are about 1 in 62.9 million (matching all 7 main numbers from 47). Powerball Division 1 odds are about 1 in 134.5 million (7 main numbers from 35 plus the Powerball from 20). No method changes these fixed odds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What days are Oz Lotto and Powerball drawn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oz Lotto is drawn every Tuesday and Powerball every Thursday, in the evening Australian Eastern time. This tool updates automatically after each new draw."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common Oz Lotto and Powerball numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can see the most and least frequently drawn numbers across all recorded draws in the Most & least common numbers section and the Overview tab. Remember that frequent (hot) numbers are not more likely to be drawn next — each draw is independent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is using lottery statistics or a number generator cheating or illegal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Analysing past results and generating number combinations is completely legal and is not cheating — it cannot influence a fair, random draw. It is simply a way to choose numbers and explore the statistics for fun."
+      }
     }
   ]
 }
@@ -349,7 +381,45 @@
       <p data-i18n="seo.faq.a4">Draw results come from public official Australian lottery sources and are updated periodically. This is an independent project and is not affiliated with or endorsed by The Lott, Lotterywest or the Lottery Corporation — always rely on the officially published results.</p>
       <h3 data-i18n="seo.faq.q5">How is the number generator different from picking at random?</h3>
       <p data-i18n="seo.faq.a5">The generator weights numbers by statistical models (frequency, overdue, Markov, Bayesian, consensus or balanced shape) and samples them with a deterministic, reproducible seed. It also offers a pure-random baseline so you can compare. None of the methods improves your real odds of winning.</p>
+      <h3 data-i18n="seo.faq.q6">What are the odds of winning Oz Lotto or Powerball Division 1?</h3>
+      <p data-i18n="seo.faq.a6">Oz Lotto Division 1 odds are about 1 in 62.9 million (matching all 7 main numbers from 47). Powerball Division 1 odds are about 1 in 134.5 million (7 main numbers from 35 plus the Powerball from 20). No method changes these fixed odds.</p>
+      <h3 data-i18n="seo.faq.q7">What days are Oz Lotto and Powerball drawn?</h3>
+      <p data-i18n="seo.faq.a7">Oz Lotto is drawn every Tuesday and Powerball every Thursday, in the evening Australian Eastern time. This tool updates automatically after each new draw.</p>
+      <h3 data-i18n="seo.faq.q8">What are the most common Oz Lotto and Powerball numbers?</h3>
+      <p data-i18n="seo.faq.a8">You can see the most and least frequently drawn numbers across all recorded draws in the “Most & least common numbers” section and the Overview tab. Remember that frequent (“hot”) numbers are not more likely to be drawn next — each draw is independent.</p>
+      <h3 data-i18n="seo.faq.q9">Is using lottery statistics or a number generator cheating or illegal?</h3>
+      <p data-i18n="seo.faq.a9">No. Analysing past results and generating number combinations is completely legal and is not cheating — it cannot influence a fair, random draw. It is simply a way to choose numbers and explore the statistics for fun.</p>
     </div>
+  </section>
+
+  <!-- ================= INFO CONTENT (facts, odds, glossary — indexable) ================= -->
+  <section class="seo-content card" id="info-content">
+    <h2 data-i18n="info.howto.h">How to play Oz Lotto &amp; Powerball</h2>
+    <p data-i18n-html="info.howto.oz"><strong>Oz Lotto</strong>: pick <strong>7 numbers from 1–47</strong>. Each draw also produces <strong>3 supplementary numbers</strong> that count toward the lower prize divisions. Oz Lotto is drawn <strong>every Tuesday</strong> (AEST). To win Division 1 you must match all 7 main numbers.</p>
+    <p data-i18n-html="info.howto.pb"><strong>Powerball</strong>: pick <strong>7 main numbers from 1–35</strong> plus <strong>1 Powerball from 1–20</strong>. Powerball is drawn <strong>every Thursday</strong> (AEST). To win Division 1 you must match all 7 main numbers and the Powerball.</p>
+
+    <h2 data-i18n="info.odds.h">Prize divisions &amp; odds of winning</h2>
+    <p data-i18n-html="info.odds.p">There are 7 prize divisions in Oz Lotto and 9 in Powerball. The odds of the top prize are fixed by mathematics: <strong>Oz Lotto Division 1 is 1 in 62,891,499</strong> (the number of ways to choose 7 numbers from 47), and <strong>Powerball Division 1 is 1 in 134,490,400</strong> (7 from 35, times 20 Powerball options). The tables below show what you need to match for each division.</p>
+    <div id="info-divtables"></div>
+    <p class="hint" data-i18n-html="info.odds.note">No statistic, hot number or generator changes these odds — every combination is equally likely. For the official published odds of every division, see the <a href="https://www.thelott.com/oz-lotto/how-to-play" target="_blank" rel="noopener">official Oz Lotto</a> and <a href="https://www.thelott.com/powerball/how-to-play" target="_blank" rel="noopener">Powerball</a> pages.</p>
+
+    <h2 data-i18n="info.freq.h">Most &amp; least common numbers (all draws)</h2>
+    <p data-i18n-html="info.freq.p">Across all recorded draws, these main numbers have appeared most and least often. This is a historical summary only — because every draw is independent, it <strong>does not</strong> make any number more or less likely next time.</p>
+    <div id="info-freq"></div>
+
+    <h2 data-i18n="info.gloss.h">Glossary of lottery statistics terms</h2>
+    <ul class="glossary">
+      <li data-i18n-html="info.gloss.hot"><strong>Hot number</strong> — a number drawn more often than average within the window you choose.</li>
+      <li data-i18n-html="info.gloss.cold"><strong>Cold number</strong> — a number drawn less often, or not for a long time.</li>
+      <li data-i18n-html="info.gloss.overdue"><strong>Overdue number</strong> — one that has not appeared for longer than its average gap. It is not actually “due”.</li>
+      <li data-i18n-html="info.gloss.freq"><strong>Frequency</strong> — how many times a number has been drawn in the selected period.</li>
+      <li data-i18n-html="info.gloss.pairs"><strong>Co-occurrence / pair</strong> — how often two numbers are drawn together; mostly coincidence.</li>
+      <li data-i18n-html="info.gloss.backtest"><strong>Walk-forward backtest</strong> — testing a method by predicting each past draw using only earlier data, to see if it really beats random.</li>
+      <li data-i18n-html="info.gloss.fallacy"><strong>Gambler’s fallacy</strong> — the false belief that past results change the odds of future independent draws.</li>
+    </ul>
+
+    <h2 data-i18n="info.proj.h">About this project &amp; data</h2>
+    <p data-i18n-html="info.proj.p">This is an independent, open statistical-experiment project, not a betting service. All figures are calculated in your browser from real past Oz Lotto and Powerball draws sourced from public official results, and the dataset is refreshed automatically after each draw. The tool exists to show — honestly, with a built-in backtest — that no pattern in past numbers can predict the future. It is not affiliated with The Lott, Lotterywest or the Lottery Corporation. For 18+ only; please gamble responsibly.</p>
   </section>
 </main>
 
