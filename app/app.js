@@ -1554,6 +1554,46 @@ function renderGenerate() {
 }
 
 /* =========================================================================
+ * 私密战绩页（/secret）专用：对「给定数据切片」按方法确定性生成 N 注。
+ * draws 必须是 newest-first 且只含「目标期之前」的数据，从而是真正的样本外预测。
+ * 种子里带 seedStr（通常含目标期号），保证某一期的预测一旦生成永不改变。
+ * ========================================================================= */
+function genCombosFor(game, method, draws, count, seedStr) {
+  state.game = game; // computeStatsArr 依赖 state.game 取规则
+  const r = DATA[game].rules;
+  const preset = GEN_PRESET[method] || GEN_PRESET.consensus;
+  const win = preset.window === 'all' ? draws.length : Math.min(preset.window, draws.length);
+  const st = computeStatsArr(draws.slice(0, win), preset.decay);
+  const isRandom = method === 'random';
+  const w = weightsFor(method, st);
+  const ew = isRandom ? scoreUniform({ r: { mainMax: r.extraMax } }) : extraWeights(st);
+  const rng = mulberry32(hashSeed(seedStr + '|' + method + '|' + game));
+  const erng = mulberry32(hashSeed(seedStr + '|extra|' + method + '|' + game));
+  const combos = [], seen = new Set();
+  let guard = 0;
+  while (combos.length < count && guard < count * 200) {
+    guard++;
+    let main;
+    if (method === 'topk') {
+      const k = r.mainCount, off = combos.length, ranked = topK(w, r.mainMax);
+      main = ranked.slice(off, off + k).sort((a, b) => a - b);
+      if (main.length < k) main = ranked.slice(0, k).sort((a, b) => a - b);
+    } else {
+      main = weightedSample(w, r.mainCount, rng);
+      if (method === 'balanced' && !shapeOk(main, st) && guard < count * 150) continue;
+    }
+    const key = main.join(',');
+    if (seen.has(key) && method !== 'topk') continue;
+    seen.add(key);
+    let extra = [];
+    if (r.extraCount && !r.extraFromMain)
+      extra = method === 'topk' ? topK(ew, r.extraCount) : weightedSample(ew, r.extraCount, erng);
+    combos.push({ main, extra });
+  }
+  return combos;
+}
+
+/* =========================================================================
  * 验证
  * ========================================================================= */
 function buildValidatorInputs() {
@@ -1831,8 +1871,8 @@ function init() {
   renderOverview();
 }
 
-if (typeof document !== 'undefined') {
-  init();
+if (typeof document !== 'undefined' && document.getElementById('ov-window')) {
+  init(); // 仅主页面（存在 #ov-window）才初始化；secret 页等其他页面只复用函数
 } else if (typeof module !== 'undefined') {
   // Node 下仅导出纯函数用于测试（不触碰 DOM）
   module.exports = {
@@ -1841,6 +1881,7 @@ if (typeof document !== 'undefined') {
     tieKey, GEN_PRESET,
     topK, weightedSample, mulberry32, hashSeed, ozDivision, pbDivision,
     classifyDraw, divisionNames, evaluateTicket, normalize, modeStats, t, I18N, LANGS,
+    genCombosFor, weightsFor, extraWeights, shapeOk,
     _setState: s => Object.assign(state, s),
   };
 }
