@@ -4,8 +4,9 @@ name: Update lottery data
 # 有变化就自动提交并推送，触发 Vercel 重新部署。
 on:
   schedule:
-    # 周三、周五 02:00 UTC（约澳洲东部 12:00–13:00，周二/周四开奖结果公布之后）
-    - cron: '0 2 * * 3,5'
+    # 周三、周五 02:23 UTC（约澳洲东部 12:00–13:00，周二/周四开奖结果公布之后）
+    # 用非整点分钟，避开 GitHub 整点高峰，降低被延迟/跳过的概率
+    - cron: '23 2 * * 3,5'
   workflow_dispatch: {}   # 也可在 Actions 页面手动触发
 
 permissions:
