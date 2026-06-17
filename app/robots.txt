@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lotto-simulator-virid.vercel.app/sitemap.xml
+Sitemap: https://www.ozlottostats.app/sitemap.xml
