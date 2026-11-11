@@ -39,7 +39,7 @@ const state = { game: 'ozlotto', view: 'overview', genMode: 'recommend', lang: '
 const I18N = {
   en: {
     'app.docTitle': 'Free Oz Lotto & Powerball Statistics, Hot/Cold Numbers & Generator',
-    'app.title': '🎲 Lotto Simulator',
+    'app.title': '🎲 Oz Lotto & Powerball Number Generator & Statistics',
     'app.subtitle': 'Statistical prediction · generation · validation from past draws (no random())',
     'tab.overview': 'Overview', 'tab.predict': 'Predict', 'tab.generate': 'Generate', 'tab.validate': 'Validate',
     'disclaimer': '⚠️ Every draw is an independent random event — past results <strong>cannot</strong> truly predict the future. This tool applies various mathematical/statistical methods for experimentation and fun. Please view it rationally and never use it for betting decisions.',
@@ -186,7 +186,7 @@ const I18N = {
   },
   zh: {
     'app.docTitle': 'Oz Lotto & Powerball 模拟器 · 预测 / 生成 / 验证',
-    'app.title': '🎲 Lotto 模拟器',
+    'app.title': '🎲 Oz Lotto 与 Powerball 号码生成器和统计',
     'app.subtitle': '基于往期开奖结果的统计预测 · 生成 · 验证（非 random 随机）',
     'tab.overview': '概览', 'tab.predict': '预测', 'tab.generate': '生成', 'tab.validate': '验证',
     'disclaimer': '⚠️ 彩票每期都是独立随机事件，历史结果<strong>不能</strong>真正预测未来。本工具用多种数学/统计方法做实验与娱乐，请理性看待，切勿用于投注决策。',
@@ -332,7 +332,7 @@ const I18N = {
   },
   es: {
     'app.docTitle': 'Simulador de Oz Lotto y Powerball · Predecir / Generar / Validar',
-    'app.title': '🎲 Simulador de Lotería',
+    'app.title': '🎲 Generador de números y estadísticas de Oz Lotto y Powerball',
     'app.subtitle': 'Predicción · generación · validación estadística a partir de sorteos pasados (sin random())',
     'tab.overview': 'Resumen', 'tab.predict': 'Predecir', 'tab.generate': 'Generar', 'tab.validate': 'Validar',
     'disclaimer': '⚠️ Cada sorteo es un evento aleatorio independiente: los resultados pasados <strong>no pueden</strong> predecir el futuro. Esta herramienta aplica varios métodos matemáticos/estadísticos con fines experimentales y de entretenimiento. Úsala con sentido común y nunca para decisiones de apuestas.',
@@ -478,7 +478,7 @@ const I18N = {
   },
   fr: {
     'app.docTitle': 'Simulateur Oz Lotto & Powerball · Prédire / Générer / Valider',
-    'app.title': '🎲 Simulateur de Loto',
+    'app.title': '🎲 Générateur de numéros et statistiques Oz Lotto & Powerball',
     'app.subtitle': 'Prédiction · génération · validation statistique à partir des tirages passés (sans random())',
     'tab.overview': 'Aperçu', 'tab.predict': 'Prédire', 'tab.generate': 'Générer', 'tab.validate': 'Valider',
     'disclaimer': '⚠️ Chaque tirage est un événement aléatoire indépendant : les résultats passés <strong>ne peuvent pas</strong> prédire l’avenir. Cet outil applique diverses méthodes mathématiques/statistiques à des fins d’expérimentation et de divertissement. À utiliser avec bon sens et jamais pour des décisions de pari.',
@@ -624,7 +624,7 @@ const I18N = {
   },
   ja: {
     'app.docTitle': 'Oz Lotto & Powerball シミュレーター · 予測 / 生成 / 検証',
-    'app.title': '🎲 ロトシミュレーター',
+    'app.title': '🎲 Oz Lotto & Powerball 番号ジェネレーターと統計',
     'app.subtitle': '過去の抽選結果による統計的な予測・生成・検証（random() 不使用）',
     'tab.overview': '概要', 'tab.predict': '予測', 'tab.generate': '生成', 'tab.validate': '検証',
     'disclaimer': '⚠️ 各抽選は独立したランダム事象で、過去の結果から未来を<strong>予測することはできません</strong>。本ツールは各種の数学的・統計的手法を実験と娯楽のために用いるものです。理性的にご利用ください。賭けの判断には決して使わないでください。',
@@ -770,7 +770,7 @@ const I18N = {
   },
   ko: {
     'app.docTitle': 'Oz Lotto & Powerball 시뮬레이터 · 예측 / 생성 / 검증',
-    'app.title': '🎲 로또 시뮬레이터',
+    'app.title': '🎲 Oz Lotto & Powerball 번호 생성기 및 통계',
     'app.subtitle': '과거 추첨 결과 기반 통계적 예측·생성·검증 (random() 미사용)',
     'tab.overview': '개요', 'tab.predict': '예측', 'tab.generate': '생성', 'tab.validate': '검증',
     'disclaimer': '⚠️ 모든 추첨은 독립적인 무작위 사건으로, 과거 결과로 미래를 <strong>예측할 수 없습니다</strong>. 본 도구는 다양한 수학적·통계적 방법을 실험과 재미를 위해 사용합니다. 합리적으로 이용하시고 절대 베팅 결정에 사용하지 마세요.',

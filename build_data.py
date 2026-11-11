@@ -106,6 +106,9 @@ def main():
           f"(newest {pb[0]['date']} #{pb[0]['n']})")
     print(f"Wrote {OUT} ({os.path.getsize(OUT)/1024:.0f} KB)")
 
+    import build_pages
+    build_pages.main()
+
 
 if __name__ == "__main__":
     main()
